@@ -11,7 +11,7 @@ echo "==> build"
 
 echo "==> sync to main branch"
 git fetch origin
-git checkout -B main origin/main 2>/dev/null || git checkout -B main backup/old-dist-20260816
+git checkout -B main FETCH_HEAD 2>/dev/null || git checkout -B main backup/old-dist-20260816
 rm -rf assets index.html
 cp -R "$FRONTEND/dist/." .
 git add -A
